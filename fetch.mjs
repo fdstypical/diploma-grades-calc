@@ -6,7 +6,7 @@ const buildTable = (rows) => `
   </table>
 `;
 
-export const fetchTable = (id) =>
-  fetch(`https://lk.pnzgu.ru/ajax/grades/${id}/exec/204720/is_show/1`)
+export const fetchTable = (studentId, execId) =>
+  fetch(`https://lk.pnzgu.ru/ajax/grades/${studentId}/exec/${execId}/is_show/1`)
     .then((res) => res.json())
     .then((res) => buildTable(res.rows));
